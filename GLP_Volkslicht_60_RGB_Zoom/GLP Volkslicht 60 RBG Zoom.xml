@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<device image="" type="DMXDevice" dmxaddresscount="13" dmxcversion="3.1.0" ddfversion="1.0.0">
+  <information>
+    <model>Volkslicht 60 RGB Zoom</model>
+    <vendor>GLP</vendor>
+    <author>Marius Ketterer</author>
+    <mode>Normal</mode>
+  </information>
+  <functions>
+    <position>
+      <pan dmxchannel="0" finedmxchannel="1">
+        <range range="660"/>
+      </pan>
+      <tilt dmxchannel="2" finedmxchannel="3">
+        <range range="300"/>
+      </tilt>
+    </position>
+    <colorwheel dmxchannel="4">
+      <step type="enableRGB" mindmx="0" maxdmx="7"/>
+      <step type="color" val="#FF0000" mindmx="8" maxdmx="15" caption="Red"/>
+      <step type="color" val="#FFBF00" mindmx="16" maxdmx="23" caption="Amber"/>
+      <step type="color" val="#fceea7" mindmx="24" maxdmx="31" caption="Warm Yellow"/>
+      <step type="color" val="#FFFF00" mindmx="32" maxdmx="39" caption="Yellow"/>
+      <step type="color" val="#00ff00" mindmx="40" maxdmx="47" caption="Green"/>
+      <step type="color" val="#40e0d0" mindmx="48" maxdmx="55" caption="Turquoise"/>
+      <step type="color" val="#00FFFF" mindmx="56" maxdmx="63" caption="Cyan"/>
+      <step type="color" val="#0000FF" mindmx="64" maxdmx="71" caption="Blue"/>
+      <step type="color" val="#E6E6FA" mindmx="72" maxdmx="79" caption="Lavender"/>
+      <step type="color" val="#E0B0FF" mindmx="80" maxdmx="87" caption="Mauve"/>
+      <step type="color" val="#FF00FF" mindmx="88" maxdmx="95" caption="Magenta"/>
+      <step type="color" val="#ffc0cb" mindmx="96" maxdmx="103" caption="Pink"/>
+      <step type="color" val="#FFBB78" mindmx="104" maxdmx="111" caption="White - CTO"/>
+      <step type="color" val="#FFEEE3" mindmx="112" maxdmx="119" caption="White"/>
+      <step type="color" val="#F0F1FF" mindmx="120" maxdmx="127" caption="White - CTB"/>
+      <wheelrotation>
+        <range type="cw" mindmx="128" maxdmx="223" minval="0" maxval="8"/>
+        <range type="random" mindmx="224" maxdmx="255" minval="0.1" maxval="8"/>
+      </wheelrotation>
+    </colorwheel>
+    <rgb>
+      <red dmxchannel="5"/>
+      <green dmxchannel="6"/>
+      <blue dmxchannel="7"/>
+    </rgb>
+    <strobe dmxchannel="8">
+      <range type="linear" mindmx="144" maxdmx="199" minval="0.2" maxval="1"/>
+      <range type="linear" mindmx="200" maxdmx="239" minval="1" maxval="10"/>
+      <range type="linear" mindmx="240" maxdmx="241" minval="25" maxval="50"/>
+      <!-- <range type="linear" mindmx="240" maxdmx="240" val="25"/>
+      <range type="linear" mindmx="241" maxdmx="240" val="50"/> -->
+      <range type="random" mindmx="16" maxdmx="47" minval="1" maxval="10"/>
+      <range type="random pulse up" mindmx="48" maxdmx="79" minval="1" maxval="10"/>
+      <range type="random pulse down" mindmx="80" maxdmx="111" minval="1" maxval="10"/>
+      <range type="random pulse up/down" mindmx="112" maxdmx="143" minval="1" maxval="10"/>
+    </strobe>
+    <shutter dmxchannel="8">
+      <step type="closed" mindmx="0" maxdmx="15"/>
+      <step type="open" mindmx="242" maxdmx="255"/>
+    </shutter>
+    <dimmer dmxchannel="9">
+      <range type="linear" mindmx="0" maxdmx="255" minval="0" maxval="100"/>
+    </dimmer>
+    <const dmxchannel="10" name="Special" val="0"/>
+    <const dmxchannel="11" name="Movement" val="0"/>
+    <ptspeed dmxchannel="13">
+      <range type="linear" mindmx="1" maxdmx="255" minval="0" maxval="100"/>
+    </ptspeed>
+  </functions>
+  <procedures>
+    <reset>
+      <set dmxchannel="10" value="255"/>
+      <hold value="6000"/>
+      <restore dmxchannel="10"/>
+    </reset>
+  </procedures>
+</device>
